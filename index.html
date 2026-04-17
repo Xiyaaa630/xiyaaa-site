@@ -3,270 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Xiyaaa</title>
-
 <style>
-
-/* 🌿 基础 */
 body {
   margin:0;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  background:#F7F7F5;
-  color:#2F2F2F;
-  line-height:1.8;
+  font-family: Arial, sans-serif;
+  background:#E8F5E9;
+  color:#333;
 }
-
-/* 🌱 intro */
-#intro {
-  position:fixed;
-  inset:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#F7F7F5;
-  z-index:9999;
-  transition:opacity 0.6s ease;
-}
-
-#treeSVG {
-  width:120px;
-  opacity:0;
-  transform:scale(0.6);
-  transition:all 0.6s ease;
-}
-
-.leaf {
-  transition:all 0.6s ease;
-}
-
-/* 🌿 主体 */
-#main {
-  opacity:0;
-  transition:opacity 1s ease;
-}
-
-body.loaded #main {
-  opacity:1;
-}
-
-body.loaded #intro {
-  opacity:0;
-  pointer-events:none;
-}
-
 .container {
-  max-width:900px;
+  padding:60px 20px;
+  max-width:800px;
   margin:auto;
-  padding:80px 20px;
 }
-
-/* 🌟 Hero */
-.hero {
-  margin-bottom:120px;
-}
-
-.hero h1 {
-  font-size:44px;
-  font-weight:500;
+.card {
+  background:white;
+  padding:20px;
+  border-radius:16px;
   margin-bottom:20px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);
 }
-
-.hero p {
-  max-width:520px;
-  color:#6B6B6B;
+.fade {
+  animation: fadeUp 0.8s ease;
 }
-
-/* 🌿 section */
-.section {
-  margin-bottom:120px;
+@keyframes fadeUp {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
-
-.section h2 {
-  font-size:20px;
-  margin-bottom:20px;
-  color:#8A8A8A;
-}
-
-/* 🌿 项目 */
-.project {
-  margin-bottom:40px;
-}
-
-.project-title {
-  font-size:18px;
-  font-weight:500;
-}
-
-.project-desc {
-  color:#8A8A8A;
-}
-
-/* 🌿 标签 */
-.tags {
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.tag {
-  padding:6px 12px;
-  border-radius:20px;
-  background:#EAEDEA;
-  font-size:13px;
-}
-
-/* 🌬 动画 */
-.fade-up {
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 1s ease;
-}
-
-.fade-up.show {
-  opacity:1;
-  transform:translateY(0);
-}
-
 </style>
 </head>
 
 <body>
-
-<!-- 🌱 开场动画 -->
-<div id="intro">
-<svg id="treeSVG" viewBox="0 0 500 500">
-  <path id="trunk"
-    d="M250 400 C260 300 240 260 250 180"
-    stroke="#5A4A42"
-    stroke-width="6"
-    fill="none"
-  />
-  <circle class="leaf" cx="250" cy="140" r="0" fill="#CDE7D8"/>
-  <circle class="leaf" cx="210" cy="160" r="0" fill="#DFF3E6"/>
-  <circle class="leaf" cx="290" cy="160" r="0" fill="#DFF3E6"/>
-</svg>
-</div>
-
-<!-- 🌿 主内容 -->
-<div id="main">
-
-<div class="container">
-
-<section class="hero fade-up">
+<div class="container fade">
   <h1>Hi, I'm 张东洋</h1>
   <p>
-    我对「情绪价值」与「品牌表达」高度敏感。<br>
-    我习惯从文化与感受出发，去理解一个品牌，并尝试让它变得更有温度。
+  一个对「情绪价值」与「品牌表达」敏感的人。<br>
+  我习惯从文化与情感出发，去理解一个品牌，并尝试让它变得更有温度。
   </p>
-</section>
 
-<section class="section fade-up">
-  <h2>我在做什么</h2>
-  <p>
-    我正在探索如何把抽象的情绪，转化为可以被感知的品牌体验。
-  </p>
-</section>
+  <h2>项目</h2>
 
-<section class="section fade-up">
-  <h2>成长轨迹</h2>
+  <a href="needoog.html" style="text-decoration: none; color: inherit;">
+  <div class="card">
+    <h3>Needoog需要小狗</h3>
+    <p>情绪陪伴型品牌构建</p>
+    <span>🏆 全国一等奖</span>
+  </div>
+</a>
 
-  <div class="project">
-    <div class="project-title">Needoog需要小狗</div>
-    <div class="project-desc">情绪陪伴型品牌构建 · 全国一等奖</div>
+  <div class="card">
+    <h3>李白故里诗意之旅</h3>
+    <p>沉浸式文化体验设计</p>
+    <p>🏆 全国二等奖</p>
   </div>
 
-  <div class="project">
-    <div class="project-title">李白故里诗意之旅</div>
-    <div class="project-desc">沉浸式文化体验设计 · 全国二等奖</div>
+  <div class="card">
+    <h3>谪仙人动漫策划</h3>
+    <p>AI驱动的文化表达</p>
+    <p>🏆 省级一等奖</p>
   </div>
 
-  <div class="project">
-    <div class="project-title">谪仙人动漫策划</div>
-    <div class="project-desc">AI驱动文化表达 · 省级一等奖</div>
-  </div>
-
-</section>
-
-<section class="section fade-up">
-  <h2>能力</h2>
-  <div class="tags">
-    <div class="tag">品牌策略</div>
-    <div class="tag">内容策划</div>
-    <div class="tag">情绪洞察</div>
-    <div class="tag">视觉表达</div>
-    <div class="tag">AI创作</div>
-  </div>
-</section>
-
-<section class="section fade-up">
-  <h2>联系我</h2>
+  <h2>联系方式</h2>
   <p>邮箱：xygz1313699@163.com</p>
   <p>电话：13271339987</p>
-  <p style="color:#8A8A8A;">
-    如果你对情绪表达或品牌故事感兴趣，我们可以聊聊。
-  </p>
-</section>
 
 </div>
-</div>
-
-<script>
-
-// 🌱 开场动画（稳定版）
-window.onload = () => {
-
-  const trunk = document.querySelector("#trunk");
-  const leaves = document.querySelectorAll(".leaf");
-  const tree = document.querySelector("#treeSVG");
-
-  const length = trunk.getTotalLength();
-  trunk.style.strokeDasharray = length;
-  trunk.style.strokeDashoffset = length;
-
-  // 显示树
-  tree.style.opacity = 1;
-
-  // 树干长
-  setTimeout(() => {
-    trunk.style.transition = "stroke-dashoffset 0.7s ease";
-    trunk.style.strokeDashoffset = 0;
-  }, 200);
-
-  // 叶子长
-  setTimeout(() => {
-    leaves.forEach((leaf, i) => {
-      setTimeout(() => {
-        leaf.setAttribute("r", "35");
-      }, i * 80);
-    });
-  }, 700);
-
-  // 放大（占据视觉中心）
-  setTimeout(() => {
-    tree.style.transform = "scale(1.8)";
-  }, 1000);
-
-  // 结束
-  setTimeout(() => {
-    document.body.classList.add("loaded");
-  }, 1800);
-
-};
-
-// 🌬 滚动动画
-const items = document.querySelectorAll(".fade-up");
-
-window.addEventListener("scroll", () => {
-  items.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 60) {
-      el.classList.add("show");
-    }
-  });
-});
-
-</script>
-
 </body>
 </html>
