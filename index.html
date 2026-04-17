@@ -3,118 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Xiyaaa</title>
 
-<!-- 引入外部CSS -->
-<link rel="stylesheet" href="style.css">
+<!-- 字体 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+/* 🌿 基础 */
 body {
   margin:0;
-  font-family: Arial, sans-serif;
-  background:#E8F5E9;
-  color:#333;
+  font-family: 'Noto Sans SC', sans-serif;
+  background:#F7F7F5;
+  color:#2F2F2F;
+  line-height:1.8;
 }
 
+/* 🌱 Intro */
+#intro {
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#F7F7F5;
+  z-index:9999;
+}
+
+#treeSVG {
+  width:100px;
+  opacity:0;
+}
+
+/* 🌿 主体 */
+#main {
+  opacity:0;
+  transition:opacity 1s ease;
+}
+
+body.loaded #main {
+  opacity:1;
+}
+
+body.loaded #intro {
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 1s ease;
+}
+
+/* 🌿 布局 */
 .container {
-  padding:60px 20px;
-  max-width:800px;
+  max-width:900px;
   margin:auto;
+  padding:80px 20px;
 }
 
-.card {
-  background:white;
-  padding:20px;
-  border-radius:16px;
-  margin-bottom:20px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.05);
+/* ✨ Hero */
+.hero {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:120px;
 }
 
-.fade {
-  animation: fadeUp 0.8s ease;
+.hero h1 {
+  font-size:44px;
+  font-weight:500;
 }
 
-@keyframes fadeUp {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
+.hero p {
+  max-width:320px;
+  color:#8A8A8A;
 }
+
+/* 🌿 项目 */
+.project {
+  margin-bottom:80px;
+  cursor:pointer;
+}
+
+.project-image {
+  height:260px;
+  background:#EDEDEB;
+  border-radius:20px;
+  transition:all 0.5s ease;
+}
+
+.project:hover .project-image {
+  transform:scale(1.04);
+}
+
+.project h3 {
+  margin-top:16px;
+  font-weight:500;
+}
+
+.project p {
+  color:#8A8A8A;
+}
+
+/* 🌬 滚动动画 */
+.fade-up {
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease;
+}
+
+.fade-up.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- 🌱 开场动画 -->
+<!-- 🌱 动画 -->
 <div id="intro">
-  <svg id="treeSVG" viewBox="0 0 500 500">
+<svg id="treeSVG" viewBox="0 0 500 500">
 
-    <!-- 树干（带填充） -->
-    <path id="trunk"
-      d="M250 400 C260 300 240 260 250 180"
-      fill="none"
-      stroke="#5A4A42"
-      stroke-width="6"
-      stroke-linecap="round"
-    />
+  <path id="trunk"
+    d="M250 400 C260 300 240 260 250 180"
+    stroke="#5A4A42"
+    stroke-width="6"
+    fill="none"
+    stroke-linecap="round"
+  />
 
-    <!-- 树冠主体 -->
-    <g id="leaves">
+  <circle class="leaf" cx="250" cy="140" r="0" fill="#CDE7D8"/>
+  <circle class="leaf" cx="210" cy="160" r="0" fill="#DFF3E6"/>
+  <circle class="leaf" cx="290" cy="160" r="0" fill="#DFF3E6"/>
+  <circle class="leaf" cx="230" cy="110" r="0" fill="#E8F8F0"/>
+  <circle class="leaf" cx="270" cy="110" r="0" fill="#E8F8F0"/>
 
-      <circle class="leaf" cx="250" cy="140" r="0" fill="#CDE7D8"/>
-      <circle class="leaf" cx="210" cy="160" r="0" fill="#DFF3E6"/>
-      <circle class="leaf" cx="290" cy="160" r="0" fill="#DFF3E6"/>
-      <circle class="leaf" cx="230" cy="110" r="0" fill="#E8F8F0"/>
-      <circle class="leaf" cx="270" cy="110" r="0" fill="#E8F8F0"/>
-
-    </g>
-
-  </svg>
+</svg>
 </div>
 
 <!-- 🌿 主内容 -->
 <div id="main">
 
-<div class="container fade">
+<div class="container">
+
+<!-- 🌟 Hero -->
+<section class="hero fade-up">
   <h1>Hi, I'm 张东洋</h1>
   <p>
-  一个对「情绪价值」与「品牌表达」敏感的人。<br>
-  我习惯从文化与情感出发，去理解一个品牌，并尝试让它变得更有温度。
+    我尝试把情绪转化为可被感知的品牌语言，<br>
+    在文化与表达之间建立连接。
   </p>
+</section>
 
-  <h2>项目</h2>
+<!-- 🌿 项目 -->
+<section class="fade-up">
 
-  <a href="needoog.html" style="text-decoration: none; color: inherit;">
-  <div class="card">
-    <h3>Needoog需要小狗</h3>
-    <p>情绪陪伴型品牌构建</p>
-    <span>🏆 全国一等奖</span>
-  </div>
-  </a>
+<div class="project">
+  <div class="project-image"></div>
+  <h3>Needoog需要小狗</h3>
+  <p>情绪陪伴型品牌构建 · 全国一等奖</p>
+</div>
 
-  <div class="card">
-    <h3>李白故里诗意之旅</h3>
-    <p>沉浸式文化体验设计</p>
-    <p>🏆 全国二等奖</p>
-  </div>
+<div class="project">
+  <div class="project-image"></div>
+  <h3>李白故里诗意之旅</h3>
+  <p>沉浸式文化体验设计 · 全国二等奖</p>
+</div>
 
-  <div class="card">
-    <h3>谪仙人动漫策划</h3>
-    <p>AI驱动的文化表达</p>
-    <p>🏆 省级一等奖</p>
-  </div>
+<div class="project">
+  <div class="project-image"></div>
+  <h3>谪仙人动漫策划</h3>
+  <p>AI驱动的文化表达 · 省级一等奖</p>
+</div>
 
-  <h2>联系方式</h2>
+</section>
+
+<!-- 🌿 联系 -->
+<section class="fade-up" style="margin-top:120px;">
+  <h3>Contact</h3>
   <p>邮箱：xygz1313699@163.com</p>
   <p>电话：13271339987</p>
+</section>
 
 </div>
-
 </div>
 
-<!-- GSAP 动画库 -->
+<!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<!-- 你的动画 -->
-<script src="script.js"></script>
+<script>
+
+/* 🌱 树动画 */
+const trunk = document.querySelector("#trunk");
+const leaves = document.querySelectorAll(".leaf");
+const tree = document.querySelector("#treeSVG");
+
+const length = trunk.getTotalLength();
+trunk.style.strokeDasharray = length;
+trunk.style.strokeDashoffset = length;
+
+const tl = gsap.timeline();
+
+tl.to(tree, {opacity:1, scale:0.6, duration:0.3});
+tl.to(trunk, {strokeDashoffset:0, duration:0.7});
+tl.to(leaves, {
+  attr:{r:35},
+  duration:0.6,
+  stagger:0.06,
+  ease:"back.out(1.6)"
+}, "-=0.3");
+tl.to(tree, {scale:1.8, duration:0.6}, "-=0.4");
+
+tl.to("#intro", {
+  opacity:0,
+  duration:0.6,
+  onComplete:()=>document.body.classList.add("loaded")
+});
+
+/* 🌬 滚动动画 */
+const items = document.querySelectorAll(".fade-up");
+
+window.addEventListener("scroll", () => {
+  items.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 60) {
+      el.classList.add("show");
+    }
+  });
+});
+
+</script>
 
 </body>
 </html>
