@@ -10,13 +10,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f8f8f6;
+  background: #f6f8f5; /* 更柔和 */
   z-index: 9999;
 }
 
 svg {
-  width: 180px;
+  width: 220px;
+  filter: blur(0.2px); /* 微柔化 */
+}
+
+.leaf {
   opacity: 0.9;
+  transform-origin: center;
 }
 
 #main {
