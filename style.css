@@ -38,3 +38,8 @@ body.loaded #intro {
   pointer-events: none;
   transition: opacity 0.8s ease;
 }
+#treeSVG {
+  width: 80px;
+  transform: scale(0.6);
+  opacity: 0;
+}
