@@ -35,31 +35,10 @@
 
 <div class="card">
   <h3>核心能力</h3>
-  <p>品牌策划 / 情绪感知 / 文化叙事</p>
+  <p>品牌策划 /情绪感知 / 文化叙事</p>
 </div>
 
 </div>
 
- <script>
-document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", async (e) => {
-    const href = link.getAttribute("href");
-
-    if (href && !href.startsWith("#") && !href.startsWith("http")) {
-      e.preventDefault();
-
-      // 🌟 关键：浏览器原生页面过渡
-      if (document.startViewTransition) {
-        document.startViewTransition(() => {
-          window.location.href = href;
-        });
-      } else {
-        window.location.href = href;
-      }
-    }
-  });
-});
-</script>
-  
 </body>
 </html>
