@@ -35,5 +35,31 @@
 
 </div>
 
+  <script>
+/* 页面进入动画 */
+window.addEventListener("load", () => {
+  document.body.classList.add("page-loaded");
+});
+
+/* 点击链接时播放退出动画 */
+document.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", function(e) {
+    const href = this.getAttribute("href");
+
+    // 只处理内部页面跳转
+    if (href && !href.startsWith("#") && !href.startsWith("http")) {
+      e.preventDefault();
+
+      document.body.classList.remove("page-loaded");
+      document.body.classList.add("page-leave");
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400);
+    }
+  });
+});
+</script>
+  
 </body>
 </html>
