@@ -39,3 +39,21 @@ body {
   border-radius:16px;
   box-shadow:0 4px 20px rgba(0,0,0,0.05);
 }
+
+body {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 页面进入 */
+body.page-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 页面离开 */
+body.page-leave {
+  opacity: 0;
+  transform: translateY(-10px);
+}
