@@ -34,26 +34,6 @@
 </div>
 
 </div>
-<script>
-document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", async (e) => {
-    const href = link.getAttribute("href");
 
-    if (href && !href.startsWith("#") && !href.startsWith("http")) {
-      e.preventDefault();
-
-      // 🌟 关键：浏览器原生页面过渡
-      if (document.startViewTransition) {
-        document.startViewTransition(() => {
-          window.location.href = href;
-        });
-      } else {
-        window.location.href = href;
-      }
-    }
-  });
-});
-</script>
-  
 </body>
 </html>
